@@ -2,13 +2,14 @@ import csv
 import sqlite3
 
 def options():
-        print "Welcome to the Starlings Database. \nChose Numbers 1, 2, 3,4, or 6 to query the database. \nChose 5 to save changes. \nEnter -1 to quit."
-        print"1) Choose to see all the data from a table."
-        print"2) Choose to see a column from a table."
-        print"3) Add Data"
-        print"4) Update Data"
-        print"5) Save changes to Database"
-        print"6) Compare columns in a table" 
+        print "Welcome to the Starlings Database. \nChose Numbers 1-6 to query the database. \nChose 7 to save changes. \nEnter -1 to quit."
+        print"1) Choose to see all the tables in the database."
+        print"2) Choose to see all the data from a table."
+        print"3) Choose to see a column from a table."
+        print"4) Add Data"
+        print"5) Update Data"
+        print"6) Compare columns in a table"
+        print"7) Save changes to Database"
         num=int(raw_input("Type Number"))
         return num
 
@@ -73,6 +74,11 @@ def compareColumns(c):
                         rowASCII.append(item)
                 print (rowASCII)
                         
+
+def allTable(c):
+        results = c.execute("SELECT * FROM sqlite_master WHERE type = 'table'")
+        for row in results:
+                print row 
        
 ## Addin Data founctions
 def getTable(columnList, table, c): # Defining a function, giving arguments that you need to use in the function
@@ -109,17 +115,19 @@ def menu(c):
     num=options()
     while num != -1:
         if num == 1:
-            tables(c)
+                allTable(c)
         elif num == 2:
-            column(c)
+                tables(c)
         elif num == 3:
-            getNewInfo(c)
+                column(c)
         elif num == 4:
-            updateData(c)
+                getNewInfo(c)
         elif num == 5:
-            save(c)
+                updateData(c)
         elif num == 6:
                 compareColumns(c)
+        elif num == 7:
+                save(c)
         else:
             print "Please chose another number."
         num=options()
