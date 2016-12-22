@@ -16,6 +16,12 @@ def options():
 def main():
     c = sqlite3.connect("/Users/afrazier/Desktop/Internship_Folder/Starlings.db")
     menu(c)
+
+def allTable(c):
+        results = c.execute("SELECT * FROM sqlite_master WHERE type = 'table'")
+        for row in results:
+                print row
+    
 def tables(c):
     Table=raw_input("What table would you like?");
     results = c.execute("SELECT * From " + Table)
@@ -27,6 +33,19 @@ def tables(c):
             else:
                 rowASCII.append(item)
             print(rowASCII)
+
+def compareColumns(c):
+        Table = raw_input("What table would you like")
+        Columns = raw_input("Type what columns you want to see. Please separate  them by commas.")
+        results = c.execute("SELECT " + Columns + " FROM " + Table)
+        for row in results:
+                rowASCII=[]
+                for item in row:
+                        if type(item) == unicode:
+                                rowASCII.append(item.encode('ascii'))
+                        else:
+                                rowASCII.append(item)
+                print (rowASCII)
 
 def updateData(c):
     conn=c.cursor()
@@ -45,28 +64,6 @@ def updateData(c):
                 rowASCII.append(item)
     print(rowASCII)
 
-def save(c):
-       c.commit()
-
-def compareColumns(c):
-        Table = raw_input("What table would you like")
-        Columns = raw_input("Type what columns you want to see. Please separate  them by commas.")
-        results = c.execute("SELECT " + Columns + " FROM " + Table)
-        for row in results:
-                rowASCII=[]
-                for item in row:
-                        if type(item) == unicode:
-                                rowASCII.append(item.encode('ascii'))
-                        else:
-                                rowASCII.append(item)
-                print (rowASCII)
-                        
-
-def allTable(c):
-        results = c.execute("SELECT * FROM sqlite_master WHERE type = 'table'")
-        for row in results:
-                print row
-
 def joinTables(c):
         conn=c.cursor()
         table=raw_input("Please choose the first table you are joining.")
@@ -82,6 +79,10 @@ def joinTables(c):
                     else:
                         rowASCII.append(item)
                 print(rowASCII)
+
+def save(c):
+       c.commit()
+
 
 ## Addin Data founctions
 def printTable(c,table):
