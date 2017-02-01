@@ -1,30 +1,36 @@
-
+<html>
+<head>
+  <title>Tina's Search Page! </title>
+</title>
+<body>
   <h1 style="font-family: Arial">Search For Starlings</h1>
 
-<p style="font-style: italic">Enter Location, Starling ID and press Search For Starling, or Add a New Starling:</p>
+  <p style="font-style: italic">Enter Location, Starling ID and press Search For Starling, or Add a New Starling:</p>
 
-<form action="{% url 'starling_observer:search' %}" method="POST">
-  <p>
-    <ul>
-    <li><label for="location">Location: </label> 
-        <select name="location" id="location">
-          {% for each_location in location_list.all %}
-            {% if each_location.location_code == location.location_code %}
-              <option value="FL" selected>FL</option>
-            {% else %}
-              <option value="NY" selected>NY</option>
-            {% else %}
-              <option value="CA">CA</option>
-            {% endif %}
-          {% empty %}
-              <option value="">No location</option>
-          {% endfor %}
-        </select>
-        </li>
-        <li><label for="starling_id">Starling ID: </label>
-        <input type="text" name="starling_id" id="starling_id" value="" /></li>
-      &nbsp;
-      <input type="submit" name="submit" value="Search For Starling" /> &nbsp; <input type="submit" name="submit" value="Add A New Starling" />
-    </ul>
-  </p>
-</form>
+  <form action="{% url 'starling_observer:search' %}" method="POST">
+    <p>
+      <ul>
+      <li><label for="location">Location: </label> 
+          <select name="location" id="location">
+            {% for each_location in location_list.all %}
+              {% if each_location.location_code == location.location_code %}
+                <option value="FL" selected>FL</option>
+              {% else %}
+                <option value="NY" selected>NY</option>
+              {% else %}
+                <option value="CA">CA</option>
+              {% endif %}
+            {% empty %}
+                <option value="">No location</option>
+            {% endfor %}
+          </select>
+          </li>
+          <li><label for="starling_id">Starling ID: </label>
+          <input type="text" name="starling_id" id="starling_id" value="" /></li>
+        &nbsp;
+        <input type="submit" name="submit" value="Search For Starling" /> &nbsp; <input type="submit" name="submit" value="Add A New Starling" />
+      </ul>
+    </p>
+  </form>
+</body>
+</html>
