@@ -9,7 +9,7 @@
 
   <form action="{% url 'starling_observer:search' %}" method="POST">
     <p>
-      <ul>
+      <ul style="list-style-type: none;">
       <li><label for="location">Location: </label> 
           <select name="location" id="location">
             {% for each_location in location_list.all %}
@@ -25,8 +25,16 @@
             {% endfor %}
           </select>
           </li>
+          <br>
           <li><label for="starling_id">Starling ID: </label>
           <input type="text" name="starling_id" id="starling_id" value="" /></li>
+          <br>
+          <li><label for="Preparator">Preparator: </label>
+          <input type="text" name="preparator" id="preparator" value="" /></li>
+          <br>
+          <li><label for="collection_date">Collection Date: </label>
+          <input type="text" name="collection_date" id="collection_date" value="" /></li>
+          <br>
         &nbsp;
         <input type="submit" name="submit" value="Search For Starling" /> &nbsp; <input type="submit" name="submit" value="Add A New Starling" />
       </ul>

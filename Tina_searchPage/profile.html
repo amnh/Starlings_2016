@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Tina's Profile Page! </title>
+</title>
+<body>
+  <h1 style="font-family: Arial">Profile Page</h1>
+
+  <p style="font-style: italic">Fill out the form to set up your profile.</p>
+
+  <form action="{% url 'starling_observer:profile' %}" method="POST">
+    <p>
+      <ul style="list-style-type: none;">
+      <li>Username: <input type="text" name="username" size="30"
+      maxlength="25"></li>
+      <br>
+      <li>Select a profile picture: <input type="file" name="fileupload" value="fileupload" id="fileupload">
+      <br>
+      <br>
+      <li>First Name: <input type="text" name="firstname" size="30"
+          maxlength="25"></li>
+      <br>
+      <li>Last Name: <input type="text" name="lastname" size="30"
+          maxlength="25"></li>
+      <br>
+      <li>Change Password: <input type="password" name="psswd" size="30" 
+         maxlength="25"></li>
+      <br>
+      <li>Verify Password: <input type="password" name="psswd" size="30"
+          maxlength="25"></li>
+      <br>
+      <input type="submit" name="submit" value="Update Profile" /> &nbsp;
+  </ul>
+    </p>
+  </form>
+</body>
+</html>
