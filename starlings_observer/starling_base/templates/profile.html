@@ -1,16 +1,13 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 
-<head>
-  <title>Tina's Profile Page! </title>
-</title>
-<body>
-  <h1 style="font-family: Arial">Profile Page</h1>
+{% block content %}
+  <h1>Profile Page</h1>
 
-  <p style="font-style: italic">Fill out the form to set up your profile.</p>
+  <p>Fill out the form to set up your profile.</p>
 
-  <form action="{% url 'starling_observer:profile' %}" method="POST">
+  <form>
     <p>
-      <ul style="list-style-type: none;">
+      <ul>
         <li>Username: <input type="text" name="username" size="30"
         maxlength="25"></li>
         <br>
@@ -33,4 +30,4 @@
       </ul>
     </p>
   </form>
-</body>
+{% endblock %}

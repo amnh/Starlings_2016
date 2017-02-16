@@ -1,14 +1,11 @@
-<html>
-<head>
-  <title>Adding Starling Data </title>
-  <link rel="stylesheet" type="text/css" href="Death.css">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
   <h1>Add Starling</h1>
 
   <p>Enter the Prep, Trap, Depredation Method, Specimen Prep, and Preparator. Then, press add starling:</p>
 
-  <form action="{% url 'starling_observer:search' %}" method="POST">
+  <form>
     <p>
       <ul>
       
@@ -57,5 +54,4 @@
       </ul>
     </p>
   </form>
-</body>
-</html>
+{% endblock %}

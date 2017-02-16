@@ -2,7 +2,6 @@
 	float: right;
 }
 .page-header h1 {
-	background-color: #66ccff;
 	height: 100px;
 	font-family:Impact;
 	font-size: 40px
@@ -16,21 +15,17 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #0000e6;
 }
 .navibar li {
 			float: left;
 }
 .navibar li a {
 			display: block;
-			color: white;
 			text-align: center;
 			padding: 14px 16px;
 			text-decoration: none;
 }
-.navibar li a:hover {
-				background-color: #000099;
-}
+
 .paragraph {
 		width: 50%;
 		float: left;
