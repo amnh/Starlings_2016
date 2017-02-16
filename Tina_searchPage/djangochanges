@@ -1,0 +1,24 @@
+In profile.html:
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% endblock %}
+
+In urls.py:
+urlpatterns = [
+	url(r'^$', views.post_list, name='post_list'),
+	url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
+	url(r'^post/new/$', views.post_new, name='post_new'),
+	url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
+	url(r'^post/profile/$', views.profiledjango, name='profiledjango'),
+	url(r'^post/search/$', views.searchdjango, name='searchdjango'),
+]
+
+In views.py:
+def profiledjango(request):
+    form=PostForm()
+    return render(request,'blog/profiledjango.html',{'form': form})
+
+def searchdjango(request):
+    form=PostForm()
+    return render(request,'blog/searchdjango.html',{'form': form})

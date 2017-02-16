@@ -18,7 +18,7 @@ def column():
 def tables():
     conn = sqlite3.connect("/Users/afrazier/Desktop/Internship_Folder/Starlings.db")
     Table=raw_input("What table would you like?");
-    results = conn.execute ("SELECT * From " + Table)
+    results = c.execute ("SELECT * From " + Table)
     for row in results:
         rowASCII=[]
         for item in row:

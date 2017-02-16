@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Adding Starling Data </title>
+  <link rel="stylesheet" type="text/css" href="Death.css">
+</head>
+<body>
+  <h1>Add Starling</h1>
+
+  <p>Enter the Prep, Trap, Depredation Method, Specimen Prep, and Preparator. Then, press add starling:</p>
+
+  <form action="{% url 'starling_observer:search' %}" method="POST">
+    <p>
+      <ul>
+      
+          <li><label for="PREP">Prep: </label> 
+          <select name="PREP" id="PREP">
+                <option value="Whole Frozen" selected>Whole Frozen</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="TRAP">Trap: </label> 
+          <select name="TRAP" id="TRAP">
+                <option value="V-Top" selected>V-Top</option>
+                <option value="Fly-In-Trap">Fly-In-Trap</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="DEPREDATION_METHOD">Depredation Method: </label>
+          <select name="DEPREDATION_METHOD" id="DEPREDATION_METHOD">
+                <option value="Cervical Dislocation" selected>Cervical Dislocation</option>
+                <option value="CO2?">CO2</option>
+                <option value="Starvation">Starvation</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="SPECIMEN_PREP">Specimen Prep: </label> 
+          <select name="SPECIMEN_PREP" id="SPECIMEN_PREP">
+                <option value="Skin" selected>Skin</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="PREPARATOR">Preparator: </label>
+          <input type="text" name="PREPARATOR" id="PREPARATOR" value="" />
+          </li>
+          <br>
+        
+        &nbsp;
+        <input type="submit" name="submit" value="Add Starling" /> 
+      </ul>
+    </p>
+  </form>
+</body>
+</html>
