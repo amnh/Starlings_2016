@@ -13,18 +13,19 @@
 	</head>
 	<body>
 	    <div class="page-header">
+	    		<h1><a href="{% url 'home' %}">Starling Base</a></h1>
 	    	{% if user.is_authenticated %}
     			<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 			{% endif %}
 			<div class="navibar">
 				<ul>
-					<li><a href="{% url 'add_death' %}">Update</a></li>
+					<li><a href="">Update</a></li>
+					<li><a href="{% url 'add_death' %}">Add New Data</a></li>
 					<li><a href="{% url 'search' %}">Browse</a></li>
 					<li><a href="">Delete</a></li>
 					<li><a href="{% url 'profile' %}">Sign Up/Log in</a></li>
 				</ul>
 			</div>
-	        <h1><a href="{% url 'home' %}">Starling Base</a></h1>
 	    </div>
 	    <div class="content container">
 	        <div class="row">
