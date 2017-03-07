@@ -23,11 +23,11 @@ class BasicTraits(models.Model):
 
 class BirdInfo(models.Model):
     number = models.TextField(db_column='NUMBER', blank=True, null=True)  # Field name made lowercase.
-    complex_traits_id = models.ForeignKey(db_column='Complex_Traits_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    location_id = models.TextField(db_column='Location_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    preparation_id = models.TextField(blank=True, null=True)  # This field type is a guess.
-    pre_skin_id = models.TextField(db_column='Pre_Skin_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    skin_id = models.TextField(db_column='Skin_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    complex_traits_id = models.ForeignKey(Complex_Traits)  # Field name made lowercase. This field type is a guess.
+    location_id = models.ForeignKey(Location)  # Field name made lowercase. This field type is a guess.
+    preparation_id = models.ForeignKey(Preparation)  # This field type is a guess.
+    pre_skin_id = models.ForeignKey(Pre_Skin)  # Field name made lowercase. This field type is a guess.
+    skin_id = models.ForeignKey(Skin)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -50,7 +50,7 @@ class ComplexTraits(models.Model):
     testes_r = models.TextField(db_column='TESTES_R', blank=True, null=True)  # Field name made lowercase.
     testes_l = models.TextField(db_column='TESTES_L', blank=True, null=True)  # Field name made lowercase.
     ovaries = models.TextField(db_column='OVARIES', blank=True, null=True)  # Field name made lowercase.
-    basic_traits_id = models.TextField(db_column='Basic_Traits_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    basic_traits_id = models.ForeignKey(Basic_Traits)  # Field name made lowercase. This field type is a guess.
     complex_traits_id = models.TextField(db_column='Complex_Traits_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
@@ -85,8 +85,8 @@ class Location(models.Model):
     precise_locality = models.TextField(db_column='PRECISE_LOCALITY', blank=True, null=True)  # Field name made lowercase.
     latitude = models.TextField(db_column='LATITUDE', blank=True, null=True)  # Field name made lowercase.
     longitude = models.TextField(db_column='LONGITUDE', blank=True, null=True)  # Field name made lowercase.
-    collection_id = models.TextField(db_column='Collection_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    identifiers_id = models.TextField(db_column='Identifiers_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    collection_id = models.ForeignKey(Collection)  # Field name made lowercase. This field type is a guess.
+    identifiers_id = models.ForeignKey(Identifiers)  # Field name made lowercase. This field type is a guess.
     location_id = models.TextField(db_column='Location_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
@@ -112,7 +112,7 @@ class PreSkin(models.Model):
 class Preparation(models.Model):
     specimen_prep = models.TextField(db_column='SPECIMEN_PREP', blank=True, null=True)  # Field name made lowercase.
     preparator = models.TextField(db_column='PREPARATOR', blank=True, null=True)  # Field name made lowercase.
-    death_id = models.TextField(db_column='Death_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    death_id = models.ForeignKey(Death)  # Field name made lowercase. This field type is a guess.
     preparation_id = models.TextField(db_column='Preparation_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
