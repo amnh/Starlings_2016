@@ -24,6 +24,7 @@ def home(request):
 	return render(request, 'home_page.html',{})
 
 def state(request):
-	return render(request, 'new_york.html',{})
 	westchester= BirdInfo.objects.filter(number__contains='location_id = 1')
-	ulster= BirdInfo.objects.filter(number__contains='location_id = 8')
+	#ulster= BirdInfo.objects.filter(number__contains='location_id = 8')
+	return render(request, 'new_york.html',{'westchester':westchester})
+	
