@@ -39,7 +39,7 @@ class ComplexTraits(models.Model):
     testes_r = models.TextField(db_column='TESTES_R', blank=True, null=True)  # Field name made lowercase.
     testes_l = models.TextField(db_column='TESTES_L', blank=True, null=True)  # Field name made lowercase.
     ovaries = models.TextField(db_column='OVARIES', blank=True, null=True)  # Field name made lowercase.
-    basic_traits_id = models.ForeignKey('Basic_Traits', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    basic_traits_id = models.ForeignKey('BasicTraits', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     complex_traits_id = models.TextField(db_column='Complex_Traits_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
@@ -126,10 +126,10 @@ class Skin(models.Model):
 
 class BirdInfo(models.Model):
     number = models.TextField(db_column='NUMBER', blank=True, null=False, primary_key=True)  # Field name made lowercase.
-    complex_traits_id = models.ForeignKey('Complex_Traits', on_delete=models.CASCADE, blank=True, null=True,)  # Field name made lowercase. This field type is a guess.
+    complex_traits_id = models.ForeignKey('ComplexTraits', on_delete=models.CASCADE, blank=True, null=True,)  # Field name made lowercase. This field type is a guess.
     location_id = models.ForeignKey(Location, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     preparation_id = models.ForeignKey(Preparation, on_delete=models.CASCADE, blank=True, null=True)  # This field type is a guess.
-    pre_skin_id = models.ForeignKey('Pre_Skin', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    pre_skin_id = models.ForeignKey('PreSkin', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     skin_id = models.ForeignKey(Skin, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
