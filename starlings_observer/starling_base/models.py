@@ -84,12 +84,12 @@ class Location(models.Model):
 
 
 class PreSkin(models.Model):
-    beak_length_mm_pre_skin_field = models.DecimalField(db_column='Beak_length_mm_(Pre-Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    beak_depth_mm_pre_skin_field = models.DecimalField(db_column='Beak_depth_mm_(Pre-skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    head_length_mm_pre_skin_field = models.DecimalField(db_column='Head_length_mm_(Pre-Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    wing_length_mm_pre_skin_field = models.DecimalField(db_column='Wing_length_mm_(Pre-Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tail_length_mm_pre_skin_field = models.DecimalField(db_column='Tail_length_mm_(Pre-Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tarsus_length_mm_pre_skin_field = models.DecimalField(db_column='Tarsus_length_mm_(Pre-Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_length_mm_pre_skin_field = models.FloatField(db_column='Beak_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_depth_mm_pre_skin_field = models.FloatField(db_column='Beak_depth_mm_(Pre-skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    head_length_mm_pre_skin_field = models.FloatField(db_column='Head_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    wing_length_mm_pre_skin_field = models.FloatField(db_column='Wing_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tail_length_mm_pre_skin_field = models.FloatField(db_column='Tail_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tarsus_length_mm_pre_skin_field = models.FloatlField(db_column='Tarsus_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     notes_pre_skin_field = models.TextField(db_column='Notes_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     pre_skin_id = models.TextField(db_column='Pre_Skin_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
@@ -110,12 +110,12 @@ class Preparation(models.Model):
 
 
 class Skin(models.Model):
-    beak_length_mm_skin_field = models.DecimalField(db_column='Beak_length_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    beak_depth_mm_skin_field = models.DecimalField(db_column='Beak_depth_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    head_length_mm_skin_field = models.DecimalField(db_column='Head_length_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    wing_length_mm_skin_field = models.DecimalField(db_column='Wing_length_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tail_length_mm_skin_field = models.DecimalField(db_column='Tail_length_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tarsus_length_mm_skin_field = models.DecimalField(db_column='Tarsus_length_mm_(Skin)', blank=True, null=True, max_digits=5, decimal_places=2)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_length_mm_skin_field = models.FloatField(db_column='Beak_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_depth_mm_skin_field = models.FloatField(db_column='Beak_depth_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    head_length_mm_skin_field = models.FloatField(db_column='Head_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    wing_length_mm_skin_field = models.FloatField(db_column='Wing_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tail_length_mm_skin_field = models.FloatField(db_column='Tail_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tarsus_length_mm_skin_field = models.FloatField(db_column='Tarsus_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     notes_skin_field = models.TextField(db_column='Notes_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     skin_id = models.TextField(db_column='Skin_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
