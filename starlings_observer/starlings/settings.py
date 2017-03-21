@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'starlings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-    	'NAME': '/Users/afrazier/Desktop/Internship_Folder/Starlings.db',
+    	'NAME': '/Users/lillieschachter/Documents/Bridgeup/Starlings/Starlings_2016/starlings_observer/Starlings.db',
     	'USER': '',
     	'PORT': '',
     	'PASSWORD': '',
