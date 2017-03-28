@@ -24,7 +24,16 @@ def home(request):
 	return render(request, 'home_page.html',{})
 
 def state(request):
-	westchester= BirdInfo.objects.filter(number__contains='location_id = 1')
-	#ulster= BirdInfo.objects.filter(number__contains='location_id = 8')
-	return render(request, 'new_york.html',{'westchester':westchester})
+	birds= BirdInfo.objects.all().order_by('number')
+	locations= Location.objects.order_by('state')
+	
+	context = {'birds':birds,'locations':locations}
+	
+	if request.method == 'POST':
+		this_location = Location.objects.get(state=request.POST['location'])
+		context['location']= this_location
+		return render(request, 'new_york.html',context)
+	else:
+		context['error_message'] = "It didn't work"
+		return render(request, 'search.html',context)
 	
