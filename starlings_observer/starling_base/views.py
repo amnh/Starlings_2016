@@ -25,15 +25,17 @@ def home(request):
 
 def state(request):
 	birds= BirdInfo.objects.all().order_by('number')
-	locations= Location.objects.order_by('state')
+	#locations= Location.objects.all().order_by('state')
 	
-	context = {'birds':birds,'locations':locations}
+	context = {'birds':birds}
 	
-	if request.method == 'POST':
-		this_location = Location.objects.get(state=request.POST['location'])
-		context['location']= this_location
-		return render(request, 'new_york.html',context)
-	else:
-		context['error_message'] = "It didn't work"
-		return render(request, 'search.html',context)
+	return render(request, 'new_york.html', context)
+	
+	#if request.method == 'POST':
+		#this_location = 8 #request.POST['location']
+		#context['location']= this_location
+		#return render(request, 'new_york.html',context)
+	#else:
+		#context['error_message'] = "It didn't work"
+		#return render(request, 'search.html',context)
 	

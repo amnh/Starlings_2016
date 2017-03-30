@@ -2,8 +2,10 @@
 
 {% block content %}
 	<h1>Starlings Found</h1>
-
-	{% for number in BirdInfo }
-		{{ westchester }}
-	{% endfor %}
+	{% for bird in birds %}
+		{% if bird.location_id == 1 %}
+			{{ bird.number }}
+		{% endif %}
+	{% endfor %}			
+		{{ form.as_p }}
 {% endblock %}
