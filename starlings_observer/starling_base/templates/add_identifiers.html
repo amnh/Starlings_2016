@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Add Starling</h1>
+
+  <p>Enter the Species of the Bird and the Country it was from. Then, press the "Continue" button:</p>
+
+  <form>
+    <p>
+      <ul>
+
+          <li><label for="IDENTIFICATION">Species of the Bird: </label> 
+          <select name="IDENTIFICATION" id="IDENTIFICATION">
+                <option value="Sturnus vulgaris" selected>Sturnus vulgaris</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+      
+          <li><label for="COUNTRY">Country: </label> 
+          <select name="COUNTRY" id="COUNTRY">
+                <option value="USA" selected>United States of America</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+        
+        &nbsp;
+        <div id="button">Continue</a></div>
+      </ul>
+    </p>
+  </form>
+{% endblock %}

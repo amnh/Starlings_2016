@@ -17,9 +17,6 @@ def profile(request):
 def search(request):
     return render(request,'search.html',{})
 
-def add_death(request):
-    return render(request,'add_death.html',{})
-
 def home(request):
 	return render(request, 'home_page.html',{})
 
@@ -27,4 +24,37 @@ def state(request):
 	westchester= BirdInfo.objects.filter(number__contains='location_id = 1')
 	#ulster= BirdInfo.objects.filter(number__contains='location_id = 8')
 	return render(request, 'new_york.html',{'westchester':westchester})
-	
+
+def add_death(request):
+    return render(request,'add_death.html', {})
+
+"""
+def add_collection(request):
+    return render(request,'add_collection.html', {})
+
+def add_collection(request):
+    return render(request,'add_collection.html/add_identifiers.html',{})
+
+def add_identifiers(request):
+    return render(request,'add_identifiers.html/add_complex_traits.html',{})
+
+def add_identifiers(request):
+    return render(request,'add_identifiers.html/add_complex_traits.html',{})
+
+def add_complex_traits(request):
+    return render(request,'add_complex_traits.html/add_preparation.html',{})
+
+def add_preparation(request):
+    return render(request,'add_preparation.html/add_location.html',{})
+
+def add_location(request):
+    return render(request,'add_location.html/add_skin.html',{})
+
+def add_skin(request):
+    return render(request,'add_skin.html/add_pre_skin.html',{})
+"""
+
+
+
+
+

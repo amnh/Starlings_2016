@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Add Starling</h1>
+
+  <p>Enter the State, County, Precise Locality/Address, Latitude, and Longitude. Then, press the "Continue" button:</p>
+
+  <form>
+    <p>
+      <ul>
+
+          <li><label for="STATE">State: </label> 
+          <select name="STATE" id="STATE">
+                <option value="NY" selected>NY</option>
+                <option value="CA" selected>CA</option>
+                <option value="FL" selected>FL</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="COUNTY">County: </label>
+          <input type="text" name="COUNTY" id="COUNTY" value="" />
+          </li>
+          <br>
+
+          <li><label for="PRECISE_LOCALITY">Precise Locality: </label>
+          <input type="text" name="PRECISE_LOCALITY" id="PRECISE_LOCALITY" value="" placeholder="e.g. JFK Airport" />
+          </li>
+          <br>
+
+          <li><label for="LATITUDE">Latitude: </label>
+          <input type="text" name="LATITUDE" id="LATITUDE" value="" />
+          </li>
+          <br>
+
+          <li><label for="LONGITUDE">Longitude: </label>
+          <input type="text" name="LONGITUDE" id="LONGITUDE" value="" />
+          </li>
+          <br>
+        
+        &nbsp;
+        <div id="button">Continue</a></div>
+      </ul>
+    </p>
+  </form>
+{% endblock %}
