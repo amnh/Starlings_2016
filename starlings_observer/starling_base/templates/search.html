@@ -4,8 +4,8 @@
   <h1>Search For Starlings</h1>
 
   <p>Enter Location, Starling ID and press Search For Starling, or Add a New Starling:</p>
-
-  <form>
+	<p> {{ error_message }}</p>	
+  <form method="POST">{% csrf_token %}
     <p>
       <ul>
       <li><label for="location">Location: </label> 

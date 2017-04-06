@@ -25,4 +25,6 @@ urlpatterns = [
 	url(r'^add_location/add_skin$', views.add_skin, name='add_skin'),
 	url(r'^add_skin/add_pre_skin$', views.add_pre_skin, name='add_pre_skin'),"""
 
+
+	url(r'^starling_detail/$', views.starling_detail, name='starling_detail'),
 ]
