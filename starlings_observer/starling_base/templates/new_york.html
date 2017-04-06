@@ -2,10 +2,14 @@
 
 {% block content %}
 	<h1>Starlings Found</h1>
+	{{ location }} -- {{ bird }}
 	{% for bird in birds %}
-		{% if bird.location_id == 1 %}
-			{{ bird.number }}
+		{% if this_location == bird.location_id	 %}
+			<ul>
+				<li>Bird ID:<a href="">{{ bird.number }}</a></li>
+				<li> Location:{{ bird.location_id }}</li>
+			</ul>			
 		{% endif %}
 	{% endfor %}			
-		{{ form.as_p }}
+	{{ form.as_p }}
 {% endblock %}

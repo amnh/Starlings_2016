@@ -10,7 +10,7 @@
       <ul>
       <li><label for="location">Location: </label> 
           <select name="location" id="location">
-            {% for each_location in location_list.all %}
+            {% for each_location in locations.all %}
               <option value="each_location" selected>each_location</option>
             {% empty %}
               <option value="FL" selected>FL</option>

@@ -8,6 +8,6 @@ urlpatterns = [
 	url(r'^search/$', views.search, name='search'),
 	url(r'^add_death/$', views.add_death, name='add_death'),
 	url(r'^home/$', views.home, name='home'),
-	url(r'^new_york/$', views.state, name='new_york'),
+	#url(r'^new_york/$', views., name='new_york'),
 
 ]

@@ -15,7 +15,21 @@ def profile(request):
     return render(request,'profile.html',{})
 
 def search(request):
-    return render(request,'search.html',{})
+	birds= BirdInfo.objects.all().order_by('number')
+	locations= Location.objects.all().order_by('state')
+
+	context = {'birds':birds, 'locations':locations}
+	if request.method == 'POST':
+		this_location = Location.objects.filter(state = request.POST['location'])
+		context['location'] = this_location
+	
+		"""if (request.POST['location'] == "NY"):
+			context['birds_found']= birds
+						'location': this_location,
+						} 
+		""" 
+		return render (request, 'new_york.html', context)
+	return render(request,'search.html',{})
 
 def add_death(request):
     return render(request,'add_death.html',{})
@@ -23,13 +37,21 @@ def add_death(request):
 def home(request):
 	return render(request, 'home_page.html',{})
 
-def state(request):
+'''def state(request):
 	birds= BirdInfo.objects.all().order_by('number')
-	#locations= Location.objects.all().order_by('state')
+	locations= Location.objects.all().order_by('state')
 	
-	context = {'birds':birds}
-	
-	return render(request, 'new_york.html', context)
+	context = {'birds':birds, 'locations':locations}
+	if request.method == 'POST':
+		this_location = Location.objects.get(state = request.POST['location'])
+		context['location'] = this_location
+		
+		if (request.POST['loaction'] == "NY"):
+			context = { 'birds_found': birds,
+			            'location': this_location,
+			            }   
+			return render (request, 'new_york.html', context)
+	#return render (request, 'search.html', context)
 	
 	#if request.method == 'POST':
 		#this_location = 8 #request.POST['location']
@@ -37,5 +59,5 @@ def state(request):
 		#return render(request, 'new_york.html',context)
 	#else:
 		#context['error_message'] = "It didn't work"
-		#return render(request, 'search.html',context)
+		#return render(request, 'search.html',context)'''
 	
