@@ -9,5 +9,5 @@ urlpatterns = [
 	url(r'^add_death/$', views.add_death, name='add_death'),
 	url(r'^home/$', views.home, name='home'),
 	url(r'^new_york/$', views.state, name='new_york'),
-
+	url(r'^starling_detail/$', views.starling_detail, name='starling_detail')
 ]

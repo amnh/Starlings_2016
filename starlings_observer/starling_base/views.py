@@ -38,4 +38,7 @@ def state(request):
 	#else:
 		#context['error_message'] = "It didn't work"
 		#return render(request, 'search.html',context)
+
+def starling_detail(request):
+	return render(request, 'observation_detail.html', {})
 	
