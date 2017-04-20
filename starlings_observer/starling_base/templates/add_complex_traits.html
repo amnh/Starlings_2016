@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Add Starling</h1>
+
+  <p>Enter the Weight, size of the Right Testes, size of the Left Testes, and size of the Ovaries. Then, press the "Continue" button:</p>
+  <p>If certain categories do not apply to your bird, leave them blank.</p>
+
+  <form>
+    <p>
+      <ul>
+
+          <li><label for="WEIGHT_G">Weight (Grams): </label> 
+          <input type="text" name="WEIGHT_G" id="WEIGHT_G" value="" />
+          </li>
+          <br>
+
+          <li><label for="TESTES_R">Right Testes (Millimeters): </label> 
+          <input type="text" name="TESTES_R" id="TESTES_R" value="" />
+          </li>
+          <br>
+
+          <li><label for="TESTES_L">Left Testes (Millimeters): </label> 
+          <input type="text" name="TESTES_L" id="TESTES_L" value="" />
+          </li>
+          <br>
+
+          <li><label for="OVARIES">Ovaries (Millimeters): </label> 
+          <input type="text" name="OVARIES" id="OVARIES" value="" />
+          </li>
+          <br>
+        
+        &nbsp;
+        <<div id="button">Continue</a></div>
+      </ul>
+    </p>
+  </form>
+{% endblock %}
