@@ -50,8 +50,10 @@ def add_skin(request):
     return render(request,'add_skin.html',{})
 
 def add_pre_skin(request):
-    return render(request,'add_pre_skin.html',{})
+    return render(request,'add_pre_skin.html/add_pre_skin.html',{})
 
+
+"""
 
 
 
