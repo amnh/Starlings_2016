@@ -16,5 +16,8 @@ urlpatterns = [
 	url(r'^add_location/$', views.add_location, name='add_location'),
 	url(r'^add_skin/$', views.add_skin, name='add_skin'),
 	url(r'^add_pre_skin/$', views.add_pre_skin, name='add_pre_skin'),
+
 	
 ]
+
+	
