@@ -5,7 +5,8 @@
 
   <p>Enter the Prep, Trap, and Depredation Method. Then, press the "Continue" button:</p>
 
-  <form>
+  <form method="Death" class="death-form">{% csrf_token %}>
+    {{ form.as_p }}
     <p>
       <ul>
 
@@ -37,7 +38,7 @@
           <br>
         
         &nbsp;
-        <div id="button">Continue</a></div>
+        <button type="submit" class="save btn btn-default">sumbit</button>
       </ul>
     </p>
   </form>
