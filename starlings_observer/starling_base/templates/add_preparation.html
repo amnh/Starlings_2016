@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Add Starling</h1>
+
+  <p>Enter the Specimen Prep and Preparator. Then, press the "Continue" button:</p>
+
+  <form>
+    <p>
+      <ul>
+
+          <li><label for="SPECIMEN_PREP">Specimen Prep: </label> 
+          <select name="SPECIMEN_PREP" id="SPECIMEN_PREP">
+                <option value="Skin" selected>Skin</option>
+                <option value="">Other</option>
+          </select>
+          </li>
+          <br>
+
+          <li><label for="PREPARATOR">Preparator: </label>
+          <input type="text" name="PREPARATOR" id="PREPARATOR" value="" />
+          </li>
+          <br>
+        
+        &nbsp;
+        <div id="button">Continue</a></div>
+      </ul>
+    </p>
+  </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Add Starling</h1>
+
+  <p>Enter the Date Collected, Date of Arrival at AMNH, and Collector. Then, press the "Continue" button:</p>
+
+  <form>
+    <p>
+      <ul>
+      
+          <li><label for="DATE_COLLECTED">Date Collected (MM/DD/YYYY): </label>
+          <input type="text" name="DATE_COLLECTED" id="DATE_COLLECTED" value="" />
+          </li>
+          <br>
+
+          <li><label for="Arrived_AMNH">Date of Arrival at AMNH (MM/DD/YYYY): </label>
+          <input type="text" name="DATE_COLLECTED" id="DATE_COLLECTED" value="" />
+          </li>
+          <br>
+
+          <li><label for="Collector">Collector: </label>
+          <input type="text" name="Collection" id="Collection" value="" />
+          </li>
+          <br>
+        
+        &nbsp;
+        <div id="button">Continue</a></div>
+      </ul>
+    </p>
+  </form>
+{% endblock %}
