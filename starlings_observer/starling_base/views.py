@@ -43,8 +43,10 @@ def state(request):
 
 def add_death(request):
     return render(request,'add_death.html', {})
+
 '''
 """
+
 def add_collection(request):
     return render(request,'add_collection.html', {})
 
@@ -68,9 +70,11 @@ def add_location(request):
 
 def add_skin(request):
     return render(request,'add_skin.html/add_pre_skin.html',{})
+
+def add_pre_skin(request):
+    return render(request,'add_pre_skin.html/add_pre_skin.html',{})
+
 """
-
-
 
 
 
@@ -100,7 +104,7 @@ def add_skin(request):
 		#return render(request, 'search.html',context)'''
 	
 		#return render(request, 'search.html',context)
-
+"""
 def starling_detail(request):
 	return render(request, 'observation_detail.html', {})
 	
