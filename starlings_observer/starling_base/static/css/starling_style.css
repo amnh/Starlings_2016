@@ -9,3 +9,8 @@ p {
 ul {
     list-style-type: none;
 }
+
+.high {
+	font-family: Arial;
+	font-weight: bold;
+}
