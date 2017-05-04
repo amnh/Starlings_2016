@@ -10,13 +10,14 @@
       <ul>
       <li><label for="location">Location: </label> 
           <select name="location" id="location">
-            {% for each_location in locations.all %}
-              <option value="each_location" selected>each_location</option>
+            {% for each_location in locations_list %}
+            	{% if each_location.state == location.state %}
+               		<option value="{{ each_location.state }}" selected>{{ each_location.state }}</option>
+               	{% else %}
+               		<option value="{{ each_location.state }}">{{ each_location.state }}</option>
+               	{% endif %}
             {% empty %}
-              <option value="FL" selected>FL</option>
-              <option value="NY" selected>NY</option>
-              <option value="CA">CA</option>
-              <option value="">No location</option>
+            	<option value="">No locations!</option>
             {% endfor %}
           </select>
           </li>
