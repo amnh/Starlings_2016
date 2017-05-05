@@ -35,7 +35,7 @@ class BasicTraits(models.Model):
 
 
 class ComplexTraits(models.Model):
-    weight_g_field = models.DecimalField(db_column='WEIGHT_(g)', blank=True, null=True, max_digits=3, decimal_places=1)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    weight_g_field = models.DecimalField(db_column='WEIGHT_G', blank=True, null=True, max_digits=3, decimal_places=1)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     testes_r = models.TextField(db_column='TESTES_R', blank=True, null=True)  # Field name made lowercase.
     testes_l = models.TextField(db_column='TESTES_L', blank=True, null=True)  # Field name made lowercase.
     ovaries = models.TextField(db_column='OVARIES', blank=True, null=True)  # Field name made lowercase.

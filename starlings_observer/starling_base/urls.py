@@ -6,7 +6,7 @@ urlpatterns = [
   	url(r'^admin/', admin.site.urls),
   	url(r'^profile/$', views.profile, name='profile'),
 	url(r'^search/$', views.search, name='search'),
-	url(r'^starling_detail/$', views.starling_detail, name='starling_detail'),
+	url(r'^starling_detail/(?P<number>JMZ.+)/', views.starling_detail, name='starling_detail'),
 	url(r'^$', views.home, name='home'),
 	url(r'^add_death/$', views.add_death, name='add_death'),
 	url(r'^add_collection/$', views.add_collection, name='add_collection'),

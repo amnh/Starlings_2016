@@ -63,6 +63,12 @@ def add_skin(request):
 def add_pre_skin(request):
     return render(request,'add_pre_skin.html/add_pre_skin.html',{})
 
+def starling_detail(request, number):
+   this_starling = BirdInfo.objects.get(pk=number)
+   this_ct = ComplexTraits.objects.get(complex_traits_id=5)
+   context = {'starling': this_starling}
+   context["ct"] = this_ct
+   return render(request, 'observation_detail.html', context)
 
 
 	
