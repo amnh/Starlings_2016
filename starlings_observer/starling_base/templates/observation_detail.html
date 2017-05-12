@@ -5,7 +5,7 @@ Starling Information
 {% endblock %}
 
 {% block content %}
-<h1>Starling ID {{ number }}</h1>
+<h1><span style="font-weight: bold">Starling ID: </span>{{ starling.number }}</h1>
 <ul>
   <li><span style="font-weight: bold">Species:</span> {{ identifiers.identification }}
 </ul>
@@ -16,7 +16,7 @@ Starling Information
 <ul>
   <li><span style="font-weight: bold">Date Collected:</span> {{ collection.date_collected }}</li>
   <li><span style="font-weight: bold">Arrived at AMNH:</span> {{ collection.arrived_amnh }}</li>
-  <li><span style="font-weight: bold">Collector:</span> {{ collection.collector_s_field }}</li>
+  <li><span style="font-weight: bold">Collector:</span> {{ collection.collector_field }}</li>
 </ul>
 
   <br>
@@ -30,10 +30,10 @@ Starling Information
   <br>
 <h3> Complex Traits </h3>
 <ul>
-  <li><span style="font-weight: bold">Weight:</span> {{ ct.weight_g_field }}</li>
-  <li><span style="font-weight: bold">Testes (r):</span> {{ ct.testes_r }}</li>
-  <li><span style="font-weight: bold">Testes (l):</span> {{ ct.testes_l }}</li>
-  <li><span style="font-weight: bold">Ovaries:</span> {{ ct.ovaries }}</li>
+  <li><span style="font-weight: bold">Weight (in grams):</span> {{ complextraits.weight_g_field }}</li>
+  <li><span style="font-weight: bold">Testes (r):</span> {{ complextraits.testes_r }}</li>
+  <li><span style="font-weight: bold">Testes (l):</span> {{ complextraits.testes_l }}</li>
+  <li><span style="font-weight: bold">Ovaries:</span> {{ complextraits.ovaries }}</li>
 </ul>
 
   <br>

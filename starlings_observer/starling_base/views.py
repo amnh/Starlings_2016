@@ -64,10 +64,29 @@ def add_pre_skin(request):
     return render(request,'add_pre_skin.html/add_pre_skin.html',{})
 
 def starling_detail(request, number):
-   this_starling = BirdInfo.objects.get(pk=number)
-   this_ct = ComplexTraits.objects.get(complex_traits_id=5)
-   context = {'starling': this_starling}
-   context["ct"] = this_ct
+   starling = BirdInfo.objects.get(pk=number)
+   location = Location.objects.get(pk=starling.location_id)
+   collection = Collection.objects.get(pk=location.collection_id)
+   ident = Identifiers.objects.get(pk=location.identifiers_id)
+   preparation = Preparation.objects.get(pk=starling.preparation_id)
+   death = Death.objects.get(pk=preparation.death_id)
+   preskin = PreSkin.objects.get(pk=starling.pre_skin_id)
+   skin = Skin.objects.get(pk=starling.skin_id)
+   complex_traits = ComplexTraits.objects.get(pk=starling.complex_traits_id)
+   basic_traits = BasicTraits.objects.get(pk=complex_traits.basic_traits_id)
+
+
+   context = {'starling': starling}
+   context["location"] = location
+   context['collection'] = collection
+   context['identifiers'] = ident
+   context['basictraits'] = basic_traits
+   context['complextraits'] = complex_traits
+   context['death'] = death
+   context['preskin'] = preskin
+   context['skin'] = skin
+   context['preparation'] = preparation
+
    return render(request, 'observation_detail.html', context)
 
 
