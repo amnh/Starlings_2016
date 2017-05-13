@@ -2,13 +2,27 @@
 
 {% block content %}
 	<h1>Starlings Found</h1>
-	Locations: {{ this_location}}
+	Locations: {{ this_location }}
 	{% for this_bird in birds %}
+<<<<<<< HEAD
 			<ul>
 				<li>Bird ID:<a href="{% url 'starling_detail' number=this_bird.number %}"></a></li>
 				<li> Location:{{ this_bird.location_id }}</li>
 			</ul>
 						
 	{% endfor %}			
+=======
+		<ul>
+			<li>Bird ID:<a href="{% url 'starling_detail' number=this_bird.number %}">{{ this_bird.number }}</a></li>
+			<li>Location:{{ this_bird.location_id }}</li>
+			{% for place in counties %}
+				{% if place.location_id == this_bird.location_id %}
+					<li>County: {{ place.county}}</li>
+					<li> Precise Locality: {{ place.precise_locality }}</li>
+				{% endif %}
+			{% endfor %}
+		</ul>	
+	{% endfor %}
+>>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 	{{ form.as_p }}
 {% endblock %}

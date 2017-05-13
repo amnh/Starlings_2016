@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<h1>Starling ID {{ number }}</h1>
+<h1><span style="font-weight: bold">Starling ID: </span>{{ starling.number }}</h1>
 <ul>
   <li><span class="high">Species:</span> {{ identifiers.identification }}
 </ul>
@@ -12,9 +12,15 @@
 <ul>
 <h3> Collection </h3>
 <ul>
+<<<<<<< HEAD
   <li><span class="high">Date Collected:</span> {{ collection.date_collected }}</li>
   <li><span class="high">Arrived at AMNH:</span> {{ collection.arrived_amnh }}</li>
   <li><span class="high">Collector:</span> {{ collection.collector_s_field }}</li>
+=======
+  <li><span style="font-weight: bold">Date Collected:</span> {{ collection.date_collected }}</li>
+  <li><span style="font-weight: bold">Arrived at AMNH:</span> {{ collection.arrived_amnh }}</li>
+  <li><span style="font-weight: bold">Collector:</span> {{ collection.collector_field }}</li>
+>>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 </ul>
 
   <br>
@@ -28,10 +34,17 @@
   <br>
 <h3> Complex Traits </h3>
 <ul>
+<<<<<<< HEAD
   <li><span class = "high">Weight:</span> {{ complextraits.weight }}</li>
   <li><span class="high">Testes (r):</span> {{ complextraits.testes_r }}</li>
   <li><span class="high">Testes (l):</span> {{ complextraits.testes_l }}</li>
   <li><span class="high">Ovaries:</span> {{ complextraits.ovaries }}</li>
+=======
+  <li><span style="font-weight: bold">Weight (in grams):</span> {{ complextraits.weight_g_field }}</li>
+  <li><span style="font-weight: bold">Testes (r):</span> {{ complextraits.testes_r }}</li>
+  <li><span style="font-weight: bold">Testes (l):</span> {{ complextraits.testes_l }}</li>
+  <li><span style="font-weight: bold">Ovaries:</span> {{ complextraits.ovaries }}</li>
+>>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 </ul>
 
   <br>

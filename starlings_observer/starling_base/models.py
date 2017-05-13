@@ -16,8 +16,7 @@ from django.db import models
 class Collection(models.Model):
     date_collected = models.TextField(db_column='DATE_COLLECTED', blank=True, null=True)  # Field name made lowercase.
     arrived_amnh = models.TextField(db_column='Arrived_AMNH', blank=True, null=True)  # Field name made lowercase.
-    collector_s_field = models.TextField(db_column='COLLECTOR(S)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    collection_id = models.TextField(db_column='Collection_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
+    collector_field = models.TextField(db_column='COLLECTOR', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
 
     class Meta:
         managed = False
@@ -27,7 +26,6 @@ class BasicTraits(models.Model):
     fat = models.TextField(db_column='FAT', blank=True, null=True)  # Field name made lowercase.
     age = models.TextField(db_column='AGE', blank=True, null=True)  # Field name made lowercase.
     sex = models.TextField(db_column='SEX', blank=True, null=True)  # Field name made lowercase.
-    basic_traits_id = models.TextField(db_column='Basic_Traits_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -35,12 +33,11 @@ class BasicTraits(models.Model):
 
 
 class ComplexTraits(models.Model):
-    weight_g_field = models.DecimalField(db_column='WEIGHT_(g)', blank=True, null=True, max_digits=3, decimal_places=1)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    weight_g_field = models.FloatField(db_column='WEIGHT_G', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
     testes_r = models.TextField(db_column='TESTES_R', blank=True, null=True)  # Field name made lowercase.
     testes_l = models.TextField(db_column='TESTES_L', blank=True, null=True)  # Field name made lowercase.
     ovaries = models.TextField(db_column='OVARIES', blank=True, null=True)  # Field name made lowercase.
-    basic_traits = models.ForeignKey('BasicTraits', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    complex_traits_id = models.TextField(db_column='Complex_Traits_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
+    basic_traits = models.ForeignKey(BasicTraits, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -51,7 +48,6 @@ class Death(models.Model):
     prep = models.TextField(db_column='PREP', blank=True, null=True)  # Field name made lowercase.
     trap = models.TextField(db_column='TRAP', blank=True, null=True)  # Field name made lowercase.
     depredation_method = models.TextField(db_column='DEPREDATION_METHOD', blank=True, null=True)  # Field name made lowercase.
-    death_id = models.TextField(db_column='Death_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -61,7 +57,6 @@ class Death(models.Model):
 class Identifiers(models.Model):
     identification = models.TextField(db_column='IDENTIFICATION', blank=True, null=True)  # Field name made lowercase.
     country = models.TextField(db_column='COUNTRY', blank=True, null=True)  # Field name made lowercase.
-    identifiers_id = models.TextField(db_column='Identifiers_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -76,7 +71,6 @@ class Location(models.Model):
     longitude = models.TextField(db_column='LONGITUDE', blank=True, null=True)  # Field name made lowercase.
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     identifiers = models.ForeignKey(Identifiers, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    location_id = models.TextField(db_column='Location_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -84,14 +78,13 @@ class Location(models.Model):
 
 
 class PreSkin(models.Model):
-    beak_length_mm_pre_skin_field = models.FloatField(db_column='Beak_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    beak_depth_mm_pre_skin_field = models.FloatField(db_column='Beak_depth_mm_(Pre-skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    head_length_mm_pre_skin_field = models.FloatField(db_column='Head_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    wing_length_mm_pre_skin_field = models.FloatField(db_column='Wing_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tail_length_mm_pre_skin_field = models.FloatField(db_column='Tail_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tarsus_length_mm_pre_skin_field = models.FloatField(db_column='Tarsus_length_mm_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    notes_pre_skin_field = models.TextField(db_column='Notes_(Pre-Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    pre_skin_id = models.TextField(db_column='Pre_Skin_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
+    beak_length_mm_pre_skin_field = models.FloatField(db_column='Beak_length_mm_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_depth_mm_pre_skin_field = models.FloatField(db_column='Beak_depth_mm_Pre_skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    head_length_mm_pre_skin_field = models.FloatField(db_column='Head_length_mm_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    wing_length_mm_pre_skin_field = models.FloatField(db_column='Wing_length_mm_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tail_length_mm_pre_skin_field = models.FloatField(db_column='Tail_length_mm_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tarsus_length_mm_pre_skin_field = models.FloatField(db_column='Tarsus_length_mm_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    notes_pre_skin_field = models.TextField(db_column='Notes_Pre_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
 
     class Meta:
         managed = False
@@ -102,7 +95,6 @@ class Preparation(models.Model):
     specimen_prep = models.TextField(db_column='SPECIMEN_PREP', blank=True, null=True)  # Field name made lowercase.
     preparator = models.TextField(db_column='PREPARATOR', blank=True, null=True)  # Field name made lowercase.
     death = models.ForeignKey(Death, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-    preparation_id = models.TextField(db_column='Preparation_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
         managed = False
@@ -110,14 +102,13 @@ class Preparation(models.Model):
 
 
 class Skin(models.Model):
-    beak_length_mm_skin_field = models.FloatField(db_column='Beak_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    beak_depth_mm_skin_field = models.FloatField(db_column='Beak_depth_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    head_length_mm_skin_field = models.FloatField(db_column='Head_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    wing_length_mm_skin_field = models.FloatField(db_column='Wing_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tail_length_mm_skin_field = models.FloatField(db_column='Tail_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    tarsus_length_mm_skin_field = models.FloatField(db_column='Tarsus_length_mm_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    notes_skin_field = models.TextField(db_column='Notes_(Skin)', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
-    skin_id = models.TextField(db_column='Skin_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
+    beak_length_mm_skin_field = models.FloatField(db_column='Beak_length_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    beak_depth_mm_skin_field = models.FloatField(db_column='Beak_depth_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    head_length_mm_skin_field = models.FloatField(db_column='Head_length_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    wing_length_mm_skin_field = models.FloatField(db_column='Wing_length_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tail_length_mm_skin_field = models.FloatField(db_column='Tail_length_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    tarsus_length_mm_skin_field = models.FloatField(db_column='Tarsus_length_mm_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    notes_skin_field = models.TextField(db_column='Notes_Skin', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
 
     class Meta:
         managed = False
@@ -126,10 +117,10 @@ class Skin(models.Model):
 
 class BirdInfo(models.Model):
     number = models.TextField(db_column='NUMBER', blank=True, null=False, primary_key=True)  # Field name made lowercase.
-    complex_traits = models.ForeignKey('ComplexTraits', on_delete=models.CASCADE, blank=True, null=True,)  # Field name made lowercase. This field type is a guess.
+    complex_traits = models.ForeignKey(ComplexTraits, on_delete=models.CASCADE, blank=True, null=True,)  # Field name made lowercase. This field type is a guess.
     location = models.ForeignKey(Location, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     preparation = models.ForeignKey(Preparation, on_delete=models.CASCADE, blank=True, null=True)  # This field type is a guess.
-    pre_skin = models.ForeignKey('PreSkin', on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    pre_skin = models.ForeignKey(PreSkin, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     skin = models.ForeignKey(Skin, on_delete=models.CASCADE, blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
     class Meta:
