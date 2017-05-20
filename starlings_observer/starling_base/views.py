@@ -25,11 +25,6 @@ def search(request):
 		place= Location.objects.values('county').distinct()
 		context['counties']= Location.objects.filter(state=request.POST['location'])
 		
-		"""if (request.POST['location'] == "NY"):
-			context['birds_found']= birds
-						'location': this_location,
-						} 
-		""" 
 		return render (request, 'new_york.html', context)
 	return render(request,'search.html',context)
 

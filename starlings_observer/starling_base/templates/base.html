@@ -8,31 +8,31 @@
 		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 		<link rel="stylesheet" href="{% static 'css/starling_style.css' %}">
-		<link rel="stylesheet" href="{% static 'css/home_style.css' %}">
 
 	</head>
 	<body>
-	    <div class="page-header">
-	    		<h1><a href="{% url 'home' %}">Starling Base</a></h1>
-	    	{% if user.is_authenticated %}
-    			<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="page-header">
+    	<h1><a href="{% url 'home' %}">Starling Base</a></h1>
+    	{% if user.is_authenticated %}
+  			<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 			{% endif %}
 			<div class="navibar">
 				<ul>
-					<li><a href="">Update</a></li>
+					<li><a href="">Add/Update</a></li>
 					<li><a href="{% url 'search' %}">Browse</a></li>
 					<li><a href="">Delete</a></li>
 					<li><a href="{% url 'profile' %}">Sign Up/Log in</a></li>
 				</ul>
 			</div>
-	    </div>
-	    <div class="content container">
-	        <div class="row">
-	            <div class="col-md-8">
-	            {% block content %}
-	            {% endblock %}
-	            </div>
-	        </div>
-	    </div>
+		</div>
+		<br><br><br><br><br><br>
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
 	</body>
 </html>
