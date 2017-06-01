@@ -2,13 +2,11 @@
 	float: right;
 }
 .page-header h1 {
-	height: 100px;
+	height: 80px;
 	font-family:Impact;
 	font-size: 40px;
 }
-
 .navibar {
-		position: fixed;
 		top: 70px;
 }
 .navibar ul {
