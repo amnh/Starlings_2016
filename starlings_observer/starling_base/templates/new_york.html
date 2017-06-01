@@ -7,7 +7,7 @@
 		<ul>
 			<li>Bird ID: <a href="{% url 'starling_detail' number=this_bird.number %}">{{ this_bird.number }}</a></li>
 			{% for place in counties %}
-				{% if place.location_id == this_bird.location_id %}
+				{% if place.pk == this_bird.location_id %}
 					<li>County: {{ place.county }}</li>
 					<li> Precise Locality: {{ place.precise_locality }}</li>
 				{% endif %}
