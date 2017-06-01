@@ -15,14 +15,16 @@
 	<body>
     <div class="page-header">
     	<h1><a href="{% url 'home' %}">Starling Base</a></h1>
-    	{% if user.is_authenticated %}
-  			<a href="{% url 'home' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-			{% endif %}
+			
 			<div class="navibar">
 				<ul>
-					<li><a href="">Add/Update</a></li>
+					{% if user.is_authenticated %}
+						<li><a href="">Add/Update</a></li>
+					{% endif %}
 					<li><a href="{% url 'search' %}">Browse</a></li>
-					<li><a href="">Delete</a></li>
+					{% if user.is_authenticated %}
+						<li><a href="">Delete</a></li>
+					{% endif %}
 					<li><a href="{% url 'profile' %}">Sign Up/Log in</a></li>
 				</ul>
 			</div>
