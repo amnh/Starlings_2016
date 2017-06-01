@@ -16,22 +16,17 @@ def profile(request):
     return render(request,'profile.html',{})
 
 def search(request):
-  locations= Location.objects.values('state').distinct()
-  context={'locations_list':locations}
-  if request.method == 'POST':
-    this_location = request.POST['location']
-    context['this_location'] = this_location
-    context['birds']= BirdInfo.objects.filter(location__in=Location.objects.filter(state = request.POST['location'])).order_by('number')
-    place= Location.objects.values('county').distinct()
-    context['counties']= Location.objects.filter(state=request.POST['location'])
-    
-    """if (request.POST['location'] == "NY"):
-      context['birds_found']= birds
-            'location': this_location,
-            } 
-    """ 
-    return render (request, 'new_york.html', context)
-  return render(request,'search.html',context)
+	locations= Location.objects.values('state').distinct()
+	context={'locations_list':locations}
+	if request.method == 'POST':
+		this_location = request.POST['location']
+		context['this_location'] = this_location
+		context['birds']= BirdInfo.objects.filter(location__in=Location.objects.filter(state = request.POST['location'])).order_by('number')
+		place= Location.objects.values('county').distinct()
+		context['counties']= Location.objects.filter(state=request.POST['location'])
+		
+		return render (request, 'new_york.html', context)
+	return render(request,'search.html',context)
 
 def home(request):
   return render(request,'home_page.html',{})

@@ -1,16 +1,35 @@
 h1 {
-    font-family: Arial;
+  font-family: Arial;
 }
-
 p {
-    font-style: italic;
+  font-style: italic;
+  width: 50%;
+	float: left;
 }
-
 ul {
-    list-style-type: none;
-}
 
-.high {
-	font-family: Arial;
-	font-weight: bold;
+  list-style-type: none;
 }
+.page-header h1 {
+	font-family:Impact;
+}
+.page-header {
+	margin: 0px 0px 0px 10px;
+	position: absolute;
+	background-color: white;
+
+}
+.right img {
+	float: right;
+}
+.navibar li {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}	
+
+.content {
+	overflow: hidden;
+}	
