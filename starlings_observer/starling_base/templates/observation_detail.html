@@ -1,78 +1,67 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-
+{% block title %}
+Starling Information
+{% endblock %}
 
 {% block content %}
 <h1><span style="font-weight: bold">Starling ID: </span>{{ starling.number }}</h1>
 <ul>
-  <li><span class="high">Species:</span> {{ identifiers.identification }}
+  <li><span style="font-weight: bold">Species:</span> {{ identifiers.identification }}
 </ul>
 <hr>
 <h2>Observation Detail</h2>
 <ul>
 <h3> Collection </h3>
 <ul>
-<<<<<<< HEAD
-  <li><span class="high">Date Collected:</span> {{ collection.date_collected }}</li>
-  <li><span class="high">Arrived at AMNH:</span> {{ collection.arrived_amnh }}</li>
-  <li><span class="high">Collector:</span> {{ collection.collector_s_field }}</li>
-=======
   <li><span style="font-weight: bold">Date Collected:</span> {{ collection.date_collected }}</li>
   <li><span style="font-weight: bold">Arrived at AMNH:</span> {{ collection.arrived_amnh }}</li>
   <li><span style="font-weight: bold">Collector:</span> {{ collection.collector_field }}</li>
->>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 </ul>
 
   <br>
 
 <h3> Basic Traits </h3>
 <ul>
-  <li><span class="high">Fat:</span> {{ basictraits.fat }}</li>
-  <li><span class="high">Age:</span> {{ basictraits.age }}</li>
-  <li><span class="high">Sex:</span> {{ basictraits.sex }}</li>
+  <li><span style="font-weight: bold">Fat:</span> {{ basictraits.fat }}</li>
+  <li><span style="font-weight: bold">Age:</span> {{ basictraits.age }}</li>
+  <li><span style="font-weight: bold">Sex:</span> {{ basictraits.sex }}</li>
 </ul>  
   <br>
 <h3> Complex Traits </h3>
 <ul>
-<<<<<<< HEAD
-  <li><span class = "high">Weight:</span> {{ complextraits.weight }}</li>
-  <li><span class="high">Testes (r):</span> {{ complextraits.testes_r }}</li>
-  <li><span class="high">Testes (l):</span> {{ complextraits.testes_l }}</li>
-  <li><span class="high">Ovaries:</span> {{ complextraits.ovaries }}</li>
-=======
   <li><span style="font-weight: bold">Weight (in grams):</span> {{ complextraits.weight_g_field }}</li>
   <li><span style="font-weight: bold">Testes (r):</span> {{ complextraits.testes_r }}</li>
   <li><span style="font-weight: bold">Testes (l):</span> {{ complextraits.testes_l }}</li>
   <li><span style="font-weight: bold">Ovaries:</span> {{ complextraits.ovaries }}</li>
->>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 </ul>
 
   <br>
 
 <h3> Death </h3>
 <ul>
-  <li><span class="high">Prep:</span> {{ death.prep }}</li>
-  <li><span class="high">Trap:</span> {{ death.trap }}</li>
-  <li><span class="high">Depredation Method:</span> {{ death.depredation_method }}</li>
+  <li><span style="font-weight: bold">Prep:</span> {{ death.prep }}</li>
+  <li><span style="font-weight: bold">Trap:</span> {{ death.trap }}</li>
+  <li><span style="font-weight: bold">Depredation Method:</span> {{ death.depredation_method }}</li>
 </ul>
 
   <br>
 
 <h3>Preparation</h3>
 <ul>
-<li><span class="high">Specimen Prep:</span> {{ preparation.specimen_prep }}</li>
-<li><span class="high">Preparator:</span> {{ preparation.preparator }}</li>
+<li><span style="font-weight: bold">Specimen Prep:</span> {{ preparation.specimen_prep }}</li>
+<li><span style="font-weight: bold">Preparator:</span> {{ preparation.preparator }}</li>
 </ul>
 
 <br>
 
 <h3> Location </h3>
 <ul>
-<li><span class="high">State:</span> {{ location.state }}</li>
-<li><span class="high">County:</span> {{ location.county }}</li>
-<li><span class="high">Precise Locality:</span> {{ location.precise_locality}}</li>
-<li><span class="high">Latitude:</span> {{ location.latitude}}</li>
-<li><span class="high">Longitude:</span> {{ location.longitude}}</li>
+<li><span style="font-weight: bold">State:</span> {{ location.state }}</li>
+<li><span style="font-weight: bold">County:</span> {{ location.county }}</li>
+<li><span style="font-weight: bold">Precise Locality:</span> {{ location.precise_locality}}</li>
+<li><span style="font-weight: bold">Latitude:</span> {{ location.latitude}}</li>
+<li><span style="font-weight: bold">Longitude:</span> {{ location.longitude}}</li>
 
 </ul>
 
@@ -80,30 +69,30 @@
 
 <h3> Pre Skin </h3>
 <ul>
-<li><span class="high">Beak Length:</span> {{ preskin.beak_length_mm_pre_skin_field}}</li>
-<li><span class="high">Beak Depth:</span> {{ preskin.beak_depth_mm_pre_skin_field}}</li>
-<li><span class="high">Head Length:</span> {{ preskin.head_length_mm_pre_skin_field}}</li>
-<li><span class="high">Wing Length:</span> {{ preskin.wing_length_mm_pre_skin_field }}</li>
-<li><span class="high">Tail Length:</span> {{ preskin.tail_length_mm_pre_skin_field}}</li>
-<li><span class="high">Tarsus Length:</span> {{ preskin.tarsus_length_mm_pre_skin_field}}</li>
-<li><span class="high">Notes:</span> {{ preskin.notes_pre_skin_field }}</li>
+<li><span style="font-weight: bold">Beak Length(mm):</span> {{ preskin.beak_length_mm_pre_skin_field}}</li>
+<li><span style="font-weight: bold">Beak Depth(mm):</span> {{ preskin.beak_depth_mm_pre_skin_field}}</li>
+<li><span style="font-weight: bold">Head Length(mm):</span> {{ preskin.head_length_mm_pre_skin_field}}</li>
+<li><span style="font-weight: bold">Wing Length(mm):</span> {{ preskin.wing_length_mm_pre_skin_field }}</li>
+<li><span style="font-weight: bold">Tail Length(mm):</span> {{ preskin.tail_length_mm_pre_skin_field}}</li>
+<li><span style="font-weight: bold">Tarsus Length(mm):</span> {{ preskin.tarsus_length_mm_pre_skin_field}}</li>
+<li><span style="font-weight: bold">Notes:</span> {{ preskin.notes_pre_skin_field }}</li>
 </ul>
 
 <br>
 
 <h3>Skin</h3>
 <ul>
-<li><span class="high">Beak Length:</span> {{ skin.beak_length_mm_skin_field}}</li>
-<li><span class="high">Beak Depth:</span> {{ skin.beak_depth_mm_skin_field}}</li>
-<li><span class="high">Head Length:</span> {{ skin.head_length_mm_skin_field }}</li>
-<li><span class="high">Wing Length:</span> {{ skin.wing_length_mm_skin_field }}</li>
-<li><span class="high">Tail Length:</span> {{ skin.tail_length_mm_skin_field}}</li>
-<li><span class="high">Tarsus Length:</span> {{ skin.tarsus_length_mm_skin_field}}</li>
-<li><span class="high">Notes:</span> {{ skin.notes_skin_field }}</li>
+<li><span style="font-weight: bold">Beak Length(mm):</span> {{ skin.beak_length_mm_skin_field}}</li>
+<li><span style="font-weight: bold">Beak Depth(mm):</span> {{ skin.beak_depth_mm_skin_field}}</li>
+<li><span style="font-weight: bold">Head Length(mm):</span> {{ skin.head_length_mm_skin_field }}</li>
+<li><span style="font-weight: bold">Wing Length(mm):</span> {{ skin.wing_length_mm_skin_field }}</li>
+<li><span style="font-weight: bold">Tail Length(mm):</span> {{ skin.tail_length_mm_skin_field}}</li>
+<li><span style="font-weight: bold">Tarsus Length(mm):</span> {{ skin.tarsus_length_mm_skin_field}}</li>
+<li><span style="font-weight: bold">Notes:</span> {{ skin.notes_skin_field }}</li>
 </ul>
 </ul>
 <br>
-<p class="high"><a href = "{% url 'search' number = this_bird.number %}">Back To Starlings Found</p>
+<p style="font-weight: bold">Back To Starlings Found</p>
 
-<p><a href="{% url 'search' %}">Restart Starling Observation</a></p>
+<p>Restart Starling Observation</p>
 {% endblock %}

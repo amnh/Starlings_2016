@@ -9,38 +9,39 @@ from .models import PreSkin
 from .models import Preparation
 from .models import Skin
 from .models import BirdInfo
-<<<<<<< HEAD
-=======
 from django.db.models import Prefetch
->>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 # Create your views here.
 
 def profile(request):
     return render(request,'profile.html',{})
 
 def search(request):
-	locations= Location.objects.values('state').distinct()
-	context={'locations_list':locations}
-	if request.method == 'POST':
-		this_location = request.POST['location']
-		context['this_location'] = this_location
-		context['birds']= BirdInfo.objects.filter(location__in=Location.objects.filter(state = request.POST['location'])).order_by('number')
-		place= Location.objects.values('county').distinct()
-		context['counties']= Location.objects.filter(state=request.POST['location'])
-		
-		return render (request, 'new_york.html', context)
-	return render(request,'search.html',context)
+  locations= Location.objects.values('state').distinct()
+  context={'locations_list':locations}
+  if request.method == 'POST':
+    this_location = request.POST['location']
+    context['this_location'] = this_location
+    context['birds']= BirdInfo.objects.filter(location__in=Location.objects.filter(state = request.POST['location'])).order_by('number')
+    place= Location.objects.values('county').distinct()
+    context['counties']= Location.objects.filter(state=request.POST['location'])
+    
+    """if (request.POST['location'] == "NY"):
+      context['birds_found']= birds
+            'location': this_location,
+            } 
+    """ 
+    return render (request, 'new_york.html', context)
+  return render(request,'search.html',context)
 
 def home(request):
-	return render(request,'home_page.html',{})
+  return render(request,'home_page.html',{})
+
+def starling_detail(request):
+  return render(request, 'observation_detail.html', {})
 
 def add_death(request):
     return render(request,'add_death.html', {})
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
 def add_collection(request):
     return render(request,'add_collection.html', {})
 
@@ -63,12 +64,6 @@ def add_pre_skin(request):
     return render(request,'add_pre_skin.html/add_pre_skin.html',{})
 
 def starling_detail(request, number):
-<<<<<<< HEAD
-    this_starling = BirdInfo.objects.get(pk=number)
-    context = {'starling': this_starling}
-
-    return render(request, 'observation_detail.html', context)
-=======
    starling = BirdInfo.objects.get(pk=number)
    location = Location.objects.get(pk=starling.location_id)
    collection = Collection.objects.get(pk=location.collection_id)
@@ -95,7 +90,5 @@ def starling_detail(request, number):
    return render(request, 'observation_detail.html', context)
 
 
-	
-	
-
->>>>>>> 7e0164aa9244e90ce1ec04db41098b4b0f7e155d
+  
+  
