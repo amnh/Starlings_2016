@@ -29,10 +29,10 @@ def search(request):
 	return render(request,'search.html',context)
 
 def home(request):
-	return render(request,'home_page.html',{})
+  return render(request,'home_page.html',{})
 
 def starling_detail(request):
-	return render(request, 'observation_detail.html', {})
+  return render(request, 'observation_detail.html', {})
 
 def add_death(request):
     return render(request,'add_death.html', {})
@@ -85,6 +85,5 @@ def starling_detail(request, number):
    return render(request, 'observation_detail.html', context)
 
 
-	
-	
-
+  
+  
